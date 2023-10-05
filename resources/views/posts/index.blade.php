@@ -11,7 +11,7 @@
      <header>
          <nav>
              <div>
-                 <a href="#">投稿アプリ</a>            
+             <a href="{{ route('posts.index') }}">投稿アプリ</a>             
              </div>
          </nav>
      </header>
