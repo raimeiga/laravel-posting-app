@@ -1,3 +1,4 @@
+<!-- このファイルはビュー画面のファイル -->
 <!DOCTYPE html>
  <html lang="ja">
  
