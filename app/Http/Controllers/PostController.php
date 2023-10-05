@@ -20,3 +20,4 @@ class PostController extends Controller {
 　　postsフォルダのindex.blade.phpファイル（ビュー画面のファイル）
 　　resources/views/posts/index.blade.phpというURLだが、
 　　resources/viewsを省略し、フォルダ名.ファイル名（.blade.phpは不要）と記述*/
+
