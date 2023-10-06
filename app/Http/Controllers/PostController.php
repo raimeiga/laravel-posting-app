@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;   // ← namespace（名前空間）はクラスの住所を示す
 
 use Illuminate\Http\Request;
+
 /* ↑ use宣言=このファイルではこのクラスを使います」と宣言
   このファイルではIlluminate\Httpフォルダの中にあるRequestクラスを使うよ.と宣言
   宣言により、そのファイル内ではRequestと記述するだけでRequestクラスを呼び出せるようになる*/
