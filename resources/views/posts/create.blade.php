@@ -1,4 +1,4 @@
-
+<!-- このファイルは、新規投稿ページ -->
 <!DOCTYPE html>
  <html lang="ja">
  
