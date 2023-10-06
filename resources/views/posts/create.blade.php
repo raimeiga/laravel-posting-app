@@ -29,7 +29,7 @@
                  <form action="#" method="post">
                      <!-- ↓ CSRF=サイバー攻撃からアプリを保護するためのコード。
                             Laravelでフォームを作成するときは必ず@csrfを記述。
-                            Laravelではformタグ内に@csrfと記述するだけでCSRF対策可能 -->
+                            Laravelではformタグ内に@csrfと記述するだけでCSRF対策が可能 -->
                       @csrf 
                      <div>
                          <label for="title">タイトル</label>
