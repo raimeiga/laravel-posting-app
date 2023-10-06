@@ -1,4 +1,5 @@
-<!-- このファイルはコントローラのファイル -->
+<!-- このファイルはコントローラのファイル。↓のview('posts.index')により、
+resources/views/posts/index.blade.phpファイルを読み込む -->
 <?php
 // ↓ namespace（名前空間）= クラスの住所を示す
 namespace App\Http\Controllers;

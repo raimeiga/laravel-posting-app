@@ -1,3 +1,4 @@
+<!-- これはモデルのファイル。 -->
 <?php
 
 namespace App\Models;
