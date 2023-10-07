@@ -1,5 +1,4 @@
-<!-- これはモデルのファイル。 -->
-<?php
+<?php  //これはモデルのファイル。
 
 namespace App\Models;
 
