@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
   宣言により、そのファイル内ではRequestと記述するだけでRequestクラスを呼び出せるようになる*/
    
   // やりとりするモデルを宣言。storeアクションでデータベース（postsテーブル）とやりとりするためにPostモデルを使うので、use宣言しておく
-  use App\Models\Post;
-  class PostController extends Controller {
+use App\Models\Post;
+class PostController extends Controller {
    // 一覧(投稿一覧)ページ
    public function index() {        
     return view('posts.index');
@@ -21,13 +21,13 @@ use Illuminate\Http\Request;
    
    // 作成（新規投稿）ページ
    public function create() {
-    return view('posts.create');
-}
+      return view('posts.create');
+   }
     /* ↑ 表示するビューに、resources/views/posts/create.blade.phpを指定
          resources/viewsを省略し、フォルダ名.ファイル名（.blade.phpは不要）と記述*/
 
       // 作成機能
-      public function store(Request $request) {
+   public function store(Request $request) {
       $post = new Post();                          // ← Postモデルをインスタンス化
       $post->title = $request->input('title');     // ← 「$post->title」はPostモデルとつながるPostsテーブル（データベース）のtitleカラムに投稿一覧のテキストボックスに書いたメッセージを代入
       $post->content = $request->input('content'); // ← 「$post->content」はPostモデルとつながるPostsテーブル（データベース）のcontentカラムに投稿一覧のテキストボックスに書いたメッセージを代入
