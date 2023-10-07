@@ -26,7 +26,7 @@
                      <a href="{{ route('posts.index') }}">&lt; 戻る</a>                                  
                  </div>
  
-                 <form action="#" method="post">
+                 <form action="{{ route('posts.store') }}" method="post">
                      <!-- ↓ CSRF=サイバー攻撃からアプリを保護するためのコード。
                             Laravelでフォームを作成するときは必ず@csrfを記述。
                             Laravelではformタグ内に@csrfと記述するだけでCSRF対策が可能 -->
