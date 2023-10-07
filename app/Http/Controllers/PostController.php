@@ -42,7 +42,6 @@ use Illuminate\Http\Request;
                      セッションに保存されたデータはsession()ヘルパーを使えば取得でき、別ファイル（ビュー）で呼び出すように表示できる。
                      例えばビュー内で{{ session('flash_message') }}と記述し、flash_messageというキーの値を表示できる。
       */     
-
    }
 }
    
