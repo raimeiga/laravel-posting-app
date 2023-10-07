@@ -11,7 +11,7 @@
      <header>
          <nav>
              <div>                
-                 <a href="{{ route('posts.index') }}">投稿アプリ</a>          
+                 <a href="{{ route('posts.index') }}">投稿アプリ</a>    <!-- index = 投稿一覧ページ -->
              </div>
          </nav>
      </header>
@@ -22,7 +22,7 @@
                  <h1>投稿詳細</h1>  
  
                  <div>    
-                     <a href="{{ route('posts.index') }}">&lt; 戻る</a>                              
+                     <a href="{{ route('posts.index') }}">&lt; 戻る</a>  <!-- index = 投稿一覧ページ -->                            
                  </div>
  
                  <div>
