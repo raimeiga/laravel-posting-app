@@ -24,3 +24,9 @@ Route::get('/', function () {
 // 投稿の一覧ページ
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
+// 投稿の作成ページ
+Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+ 
+// 投稿の作成機能
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+
