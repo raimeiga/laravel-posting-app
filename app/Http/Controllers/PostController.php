@@ -54,7 +54,12 @@ class PostController extends Controller {
    }
    // 詳細ページ
    public function show(Post $post) {
-      return view('posts.show', compact('post'));
+      return view('posts.show', compact('post'));  
   }
 }
-   
+/* ↑ 表示するビューに、resources/views/posts/show.blade.phpを指定(blade.phpは省略されている)
+         resources/viewsを省略し、フォルダ名.ファイル名（.blade.phpは不要）と記述
+   ↑ compact('post')により、postsテーブルの全データを取得.'post'は14行目くらいに書いた$postを指す
+     compact()関数＝引数に渡された変数とその値から配列を作成し、戻り値として返す関数
+     compact()関数の引数にはビューに渡す変数名を文字列で指定、先頭の$（ドル記号）は不要なので注意。
+*/
