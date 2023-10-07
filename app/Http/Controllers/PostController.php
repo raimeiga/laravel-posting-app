@@ -10,15 +10,24 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 class PostController extends Controller {
    // 一覧(投稿一覧)ページ
-   public function index() {        
-    return view('posts.index');
+   public function index() {   
+      $posts = Post::latest()->get();  // ← postsテーブルの全データを新しい順で取得
+      
+      return view('posts.index', compact('posts'));
    } 
-      /* ↑ view()ヘルパー=ビューを表示するためのもの。
+      /* ↑☆view()ヘルパー=ビューを表示するためのもの。
    　　  view('posts.index')のように、表示したいビューを引数として指定する
    　　  postsフォルダのindex.blade.phpファイル（ビュー画面のファイル）
    　　  resources/views/posts/index.blade.phpというURLだが、
-   　　  resources/viewsを省略し、フォルダ名.ファイル名（.blade.phpは不要）と記述*/
-   
+   　　  resources/viewsを省略し、フォルダ名.ファイル名（.blade.phpは不要）と記述
+   　　　
+   　　　☆ ↑ all()やget()メソッドは、collectionというクラスのインスタンスを戻り値として返す
+　　　　　collectionクラスは簡単にいえば配列をより使いやすくしたクラスなので、配列と同様にforeach文で中身を順番に取り出すことができる
+         変数($posts)をビューに渡すには、view()ヘルパーの第2引数にPHPのcompact()関数を指定する方法が一般的。
+         compact()関数＝引数に渡された変数とその値から配列を作成し、戻り値として返す関数
+         compact()関数の引数にはビューに渡す変数名を文字列で指定、先頭の$（ドル記号）は不要なので注意。*/
+
+
    // 作成（新規投稿）ページ
    public function create() {
       return view('posts.create');
