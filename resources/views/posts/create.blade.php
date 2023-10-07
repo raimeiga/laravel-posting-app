@@ -12,7 +12,7 @@
      <header>
          <nav>
              <div>                
-                 <a href="{{ route('posts.index') }}">投稿アプリ</a>          
+                 <a href="{{ route('posts.index') }}">投稿アプリ</a>    <!-- index = 投稿一覧ページ -->      
              </div> 
                         <!-- ↑ route()ヘルパー＝名前付きルートを呼び出すヘルパー
                         例）<a href="{{ route('posts.index') }}">投稿アプリ</a>のように書く
@@ -27,13 +27,13 @@
                  <h1>新規投稿</h1>   
                  
                  <div>
-                     <a href="{{ route('posts.index') }}">&lt; 戻る</a>                                  
+                     <a href="{{ route('posts.index') }}">&lt; 戻る</a>   <!-- index = 投稿一覧ページ -->                               
                  </div>
  
-                 <form action="{{ route('posts.store') }}" method="post">
+                 <form action="{{ route('posts.store') }}" method="post"> 
                      <!-- ↓ CSRF=サイバー攻撃からアプリを保護するためのコード。
                             Laravelでフォームを作成するときは必ず@csrfを記述。
-                            Laravelではformタグ内に@csrfと記述するだけでCSRF対策が可能 -->
+                            Laravelではformタグ内にcsrfと記述するだけでCSRF対策が可能 -->
                       @csrf 
                      <div>
                          <label for="title">タイトル</label>
