@@ -52,5 +52,9 @@ class PostController extends Controller {
                      例えばビュー内で{{ session('flash_message') }}と記述し、flash_messageというキーの値を表示できる。
       */     
    }
+   // 詳細ページ
+   public function show(Post $post) {
+      return view('posts.show', compact('post'));
+  }
 }
    
