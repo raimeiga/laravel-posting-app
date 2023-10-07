@@ -21,15 +21,15 @@
          <article>
              <div>                
                  <h1>投稿一覧</h1>    
-                <!-- ↓ ディレクティブ（directive）= @から始まるコード. 「命令」という意味
-                       Laravelのビュー内では@ifや@foreachのように@をつけると、PHPやLaravelの処理を実行できる -->
+                        <!-- ↓ ディレクティブ（directive）= アットマークから始まるコード. 「命令」という意味
+                       Laravelのビュー内ではアットマークifやアットマークforeachのように@をつけると、PHPやLaravelの処理を実行できる -->
                  @if (session('flash_message'))
                      <p>{{ session('flash_message') }}</p>
                  @endif
  
                  <div>
                      <a href="{{ route('posts.create') }}">新規投稿</a>                                   
-                 </div>         
+                 </div> 
 
              </div>
          </article>
