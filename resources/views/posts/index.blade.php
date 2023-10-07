@@ -37,7 +37,11 @@
                      <div>
                          <div>
                              <h2>{{ $post->title }}</h2>
-                             <p>{{ $post->content }}</p>     
+                             <p>{{ $post->content }}</p>    
+                             
+                             <div>
+                                 <a href="{{ route('posts.show', $post) }}">詳細</a>                                
+                             </div> 
                          </div>
                      </div>
                  @endforeach  
