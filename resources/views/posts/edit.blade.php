@@ -20,14 +20,18 @@
          <article>
              <div>                
                  <h1>投稿編集</h1>   
-                 
+                                 
                  <div>
                      <a href="{{ route('posts.index') }}">&lt; 戻る</a>                                  
                  </div>
                  
+                 <!-- ↓ formタグのaction属性にはupdateアクションへのルートを指定し、
+                 更新するPostモデルのインスタンス（$post）を渡す -->
                  <form action="{{ route('posts.update', $post) }}" method="post">
                      @csrf
-                     @method('patch')
+                     @method('patch') 
+                     <!-- ↑ HTMLのフォームはGETとPOST以外のHTTPリクエストメソッドをサポートしていないため、 
+                            formタグ内にatマークmethod('patch')と書き、GETとPOST以外のHTTPリクエストメソッドが使用可能にする -->
                      <div>
                          <label for="title">タイトル</label>
                          <input type="text" name="title" value="{{ $post->title }}">
