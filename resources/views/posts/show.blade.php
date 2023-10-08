@@ -6,6 +6,7 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>投稿詳細</title>
+     
  </head>
  
  <body>
@@ -21,6 +22,10 @@
          <article>
              <div>                
                  <h1>投稿詳細</h1>  
+                 
+                 @if (session('flash_message'))
+                     <p>{{ session('flash_message') }}</p>
+                 @endif
  
                  <div>    
                      <a href="{{ route('posts.index') }}">&lt; 戻る</a>  <!-- index = 投稿一覧ページ -->                            
