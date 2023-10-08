@@ -1,3 +1,4 @@
+<!-- このファイルは投稿詳細ページ -->
 <!DOCTYPE html>
  <html lang="ja">
  
