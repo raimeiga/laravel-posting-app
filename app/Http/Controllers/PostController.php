@@ -63,10 +63,19 @@ class PostController extends Controller {
      compact()関数＝引数に渡された変数とその値から配列を作成し、戻り値として返す関数
      compact()関数の引数にはビューに渡す変数名を文字列で指定、先頭の$（ドル記号）は不要なので注意。
 */
-  // 更新ページ
-  public function edit(Post $post) {
-   return view('posts.edit', compact('post'));
-}
+   // 更新ページ
+   public function edit(Post $post) {
+      return view('posts.edit', compact('post'));
+   }
+
+// 更新機能
+   public function update(Request $request, Post $post) {
+      $post->title = $request->input('title');
+      $post->content = $request->input('content');
+      $post->save();
+
+      return redirect()->route('posts.show', $post)->with('flash_message', '投稿を編集しました。');
+   }
 
 }
 
