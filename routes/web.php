@@ -32,11 +32,11 @@ Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 // 投稿の詳細ページ
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
-/*
-name()メソッド=ルーティング設定の際、ルート（経路）に名前をつけるメソッド
-名前がつけられたルートを、名前付きルートという
-name('posts.index');のように基準となるURL.アクション名とするとわかりやすい
-*/
+
+//name()メソッド=ルーティング設定の際、ルート（経路）に名前をつけるメソッド
+//名前がつけられたルートを、名前付きルートという
+//name('posts.index');のように基準となるURL.アクション名とするとわかりやすい
+
 
 // 投稿の更新ページ
 Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
