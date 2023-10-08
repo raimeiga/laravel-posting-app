@@ -39,4 +39,11 @@ name()メソッド=ルーティング設定の際、ルート（経路）に名�
 name('posts.index');のように基準となるURL.アクション名とするとわかりやすい
 */
 
+// 投稿の更新ページ
+Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+ 
+// 投稿の更新機能
+Route::patch('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+
+
 
