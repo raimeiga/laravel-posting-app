@@ -3,7 +3,8 @@ namespace App\Http\Controllers;   // ← namespace（名前空間）はクラス
 
 use Illuminate\Http\Request;
 /* ↑ use宣言=このファイルではこのクラスを使います」と宣言
-  このファイルではIlluminate\Httpフォルダの中にあるRequestクラスを使うよ.と宣言
+  このファイルではIlluminate\Httpフォルダの中にあるRequestクラスを使うよ.と宣言（正確なURLは↓）
+  C:\xampp\htdocs\laravel-posting-app\vendor\laravel\framework\src\Illuminate\Http\Request.php
   宣言により、そのファイル内ではRequestと記述するだけでRequestクラスを呼び出せるようになる*/
    
   // やりとりするモデルを宣言。storeアクションでデータベース（postsテーブル）とやりとりするためにPostモデルを使うので、use宣言しておく
@@ -36,7 +37,7 @@ class PostController extends Controller {
          resources/viewsを省略し、フォルダ名.ファイル名（.blade.phpは不要）と記述*/
 
       // 作成機能
-   public function store(Request $request) {
+   public function store(Request $request) {       // ← 4行目くらいのuse宣言にあるRequestクラスを型として宣言
       $post = new Post();                          // ← Postモデルをインスタンス化
       $post->title = $request->input('title');     // ← 「$post->title」はPostモデルとつながるPostsテーブル（データベース）のtitleカラムに投稿一覧のテキストボックスに書いたメッセージを代入
       $post->content = $request->input('content'); // ← 「$post->content」はPostモデルとつながるPostsテーブル（データベース）のcontentカラムに投稿一覧のテキストボックスに書いたメッセージを代入
