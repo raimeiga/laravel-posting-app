@@ -42,6 +42,9 @@ class PostController extends Controller {
          'title' => 'required',
          'content' => 'required',
       ]);
+      // ↑validate()メソッド = テキストボックスに書かれたtitle.contentにrequired（入力必須）というルールを設定
+      // validate= 検証という意味。いわゆるチェック機能。今回は入力がなされているかをチェックしている。
+      // チェックの仕方は多くあり、詳細は教材。  
       
       $post = new Post();                          // ← Postモデルをインスタンス化
       $post->title = $request->input('title');     // ← 「$post->title」はPostモデルとつながるPostsテーブル（データベース）のtitleカラムに投稿一覧のテキストボックスに書いたメッセージを代入
@@ -80,7 +83,7 @@ class PostController extends Controller {
          'title' => 'required',
          'content' => 'required',
       ]);
-
+　　　　　// ↑validate()メソッド = テキストボックスに書かれたtitle.contentにrequired（入力必須）というルールを設定
       $post->title = $request->input('title');
       $post->content = $request->input('content');
       $post->save();

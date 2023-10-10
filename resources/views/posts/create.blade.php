@@ -25,7 +25,7 @@
          <article>
              <div>                
                  <h1>新規投稿</h1>   
-                  @if ($errors->any())
+                  @if ($errors->any())  <!--　←　エラーメッセージの表示機能 -->
                      <div>
                          <ul>
                              @foreach ($errors->all() as $error)
@@ -46,11 +46,14 @@
                       @csrf 
                      <div>
                          <label for="title">タイトル</label>
-                         <input type="text" name="title">
+                         <input type="text" name="title" value="{{ old('title') }}">
                      </div>
+                     <!-- ↑ ↓ old()ヘルパー=引数にフォームのname属性の値を指定することで、そのフォームの直前の
+                     　　　　 入力値を取得直前の入力値が存在しない場合はNULLを返すので、エラー時以外は通常どお
+                              り初期値は空欄になる -->
                      <div>
                          <label for="content">本文</label>
-                         <textarea name="content"></textarea>
+                         <textarea name="content">{{ old('content') }}</textarea>
                      </div>
                      <button type="submit">投稿</button>
                  </form>
