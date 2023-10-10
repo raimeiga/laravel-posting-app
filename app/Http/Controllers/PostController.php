@@ -77,13 +77,12 @@ class PostController extends Controller {
       return view('posts.edit', compact('post'));
    }
 
-   // 更新機能
+   // 更新機能　↓validate()メソッド = テキストボックスに書かれたtitle.contentにrequired（入力必須）というルールを設定
    public function update(Request $request, Post $post) {
       $request->validate([
          'title' => 'required',
          'content' => 'required',
       ]);
-　　　　　// ↑validate()メソッド = テキストボックスに書かれたtitle.contentにrequired（入力必須）というルールを設定
       $post->title = $request->input('title');
       $post->content = $request->input('content');
       $post->save();
