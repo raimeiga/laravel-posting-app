@@ -25,6 +25,15 @@
          <article>
              <div>                
                  <h1>新規投稿</h1>   
+                  @if ($errors->any())
+                     <div>
+                         <ul>
+                             @foreach ($errors->all() as $error)
+                                 <li>{{ $error }}</li>
+                             @endforeach
+                         </ul>
+                     </div>
+                  @endif
                  
                  <div>
                      <a href="{{ route('posts.index') }}">&lt; 戻る</a>   <!-- index = 投稿一覧ページ -->                               
