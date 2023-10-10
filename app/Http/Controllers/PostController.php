@@ -38,6 +38,11 @@ class PostController extends Controller {
 
       // 作成機能
    public function store(Request $request) {       // ← 4行目くらいのuse宣言にあるRequestクラスを型として宣言
+      $request->validate([
+         'title' => 'required',
+         'content' => 'required',
+      ]);
+      
       $post = new Post();                          // ← Postモデルをインスタンス化
       $post->title = $request->input('title');     // ← 「$post->title」はPostモデルとつながるPostsテーブル（データベース）のtitleカラムに投稿一覧のテキストボックスに書いたメッセージを代入
       $post->content = $request->input('content'); // ← 「$post->content」はPostモデルとつながるPostsテーブル（データベース）のcontentカラムに投稿一覧のテキストボックスに書いたメッセージを代入
@@ -69,15 +74,21 @@ class PostController extends Controller {
       return view('posts.edit', compact('post'));
    }
 
-// 更新機能
+   // 更新機能
    public function update(Request $request, Post $post) {
+      $request->validate([
+         'title' => 'required',
+         'content' => 'required',
+      ]);
+
       $post->title = $request->input('title');
       $post->content = $request->input('content');
       $post->save();
 
       return redirect()->route('posts.show', $post)->with('flash_message', '投稿を編集しました。');
    }
-// 削除機能
+
+   // 削除機能
    public function destroy(Post $post) {
       $post->delete();
 
