@@ -14,7 +14,7 @@
  </head>
  
  <body style="padding: 60px 0;">
-       @include('layouts.header')  <!--　@includeディレクティブでヘッダー呼び出し -->
+       @include('layouts.header')  <!--　includeディレクティブでヘッダー呼び出し -->
      
      <main>
          <article>
@@ -24,7 +24,7 @@
              </div>
          </article>
      </main> 
-      @include('layouts.footer')  <!--　@includeディレクティブでフッター呼び出し -->
+      @include('layouts.footer')  <!--　includeディレクティブでフッター呼び出し -->
  </body>
  
  </html>
